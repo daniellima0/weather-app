@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CspHtmlWebpackPlugin = require("csp-html-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -8,6 +9,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Weather App",
             favicon: "./src/assets/favicon.svg",
+        }),
+        new CspHtmlWebpackPlugin({
+            "upgrade-insecure-requests": "",
         }),
     ],
     resolve: {
